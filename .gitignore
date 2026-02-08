@@ -1,34 +1,74 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
-# Binaries for programs and plugins
+# 1. 🔥 Go 语言核心编译输出
+# 可执行文件 (根据你的系统，可能为 .exe, .out 等)
 *.exe
 *.exe~
 *.dll
 *.so
 *.dylib
-
-# Test binary, built with `go test -c`
 *.test
-
-# Code coverage profiles and other test artifacts
 *.out
-coverage.*
-*.coverprofile
-profile.cov
 
-# Dependency directories (remove the comment below to include it)
+# 2. 📦 Go 模块与依赖目录
+# 如果你使用 `go mod vendor` 命令，且不打算提交 vendor 文件夹，则取消下一行的注释
 # vendor/
 
-# Go workspace file
-go.work
-go.work.sum
+# 3. 💻 主流 IDE 和编辑器配置
+# GoLand / IntelliJ IDEA
+.idea/
+*.iml
+*.iws
 
-# env file
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# 4. 🛠️ 构建工具和依赖缓存
+# Go 模块下载缓存 (所有项目共享，无需提交)
+go/pkg/
+# 项目本地构建缓存
+go/build/
+
+# 5. 🔧 项目特定构建/测试输出目录
+# 常见的输出目录名
+dist/
+bin/
+_output/
+coverage.txt
+coverage.out
+profile.out
+
+# 6. 🖥️ 操作系统生成文件
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# 7. 🔐 敏感信息文件 (绝对不能提交！)
+# 环境变量文件
 .env
+.env.local
+.env.*.local
 
-# Editor/IDE
- .idea
- .vscode
-
- vendor/
+# 密钥文件
+*.key
+*.pem
+*.crt
+*.cert

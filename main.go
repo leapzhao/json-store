@@ -2,15 +2,15 @@ package main
 
 import (
 	"context"
-	"fmt"
-	"github.com/leapzhao/json-store/config"
-	"github.com/leapzhao/json-store/database"
-	"github.com/leapzhao/json-store/handler"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
+
+	"github.com/leapzhao/json-store/config"
+	"github.com/leapzhao/json-store/database"
+	"github.com/leapzhao/json-store/handler"
 
 	"github.com/gin-gonic/gin"
 	"github.com/rs/zerolog"
