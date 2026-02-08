@@ -1,6 +1,7 @@
 server:
   port: "8080"
 
+# postgres配置
 database:
   type: "postgres"  # 或 "mysql"
   host: "localhost"
@@ -9,3 +10,13 @@ database:
   password: "password"
   name: "json_store"
   ssl_mode: "disable"
+
+# mysql配置
+#database:
+#  type: "mysql"
+#  host: "localhost"
+#  port: 5432
+#  user: "postgres"
+#  password: "password"
+#  name: "json_store"
+#  ssl_mode: "disable"

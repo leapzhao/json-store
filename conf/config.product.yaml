@@ -1,0 +1,32 @@
+environment: product
+
+server:
+  port: 443
+  host: 0.0.0.0
+  read_timeout: 30
+  write_timeout: 30
+  idle_timeout: 120
+
+database:
+  type: postgres
+  host: production-db.example.com
+  port: 5432
+  user: ${DB_USER}
+  password: ${DB_PASSWORD}
+  name: json_store_production
+  ssl_mode: require
+  max_conns: 100
+  idle_conns: 20
+
+logging:
+  level: warn
+  format: json
+  output_path: /var/log/json-store/app.log
+
+security:
+  enable_https: true
+  cert_file: /etc/ssl/certs/cert.pem
+  key_file: /etc/ssl/private/key.pem
+  cors_origins:
+    - "https://api.example.com"
+    - "https://app.example.com"

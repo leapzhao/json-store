@@ -1,0 +1,31 @@
+environment: test
+
+server:
+  port: 8080
+  host: 0.0.0.0
+  read_timeout: 30
+  write_timeout: 30
+  idle_timeout: 120
+
+database:
+  type: postgres
+  host: test-db.example.com
+  port: 5432
+  user: test_user
+  password: ${DB_PASSWORD}  # 从环境变量读取
+  name: json_store_test
+  ssl_mode: require
+  max_conns: 50
+  idle_conns: 10
+
+logging:
+  level: info
+  format: json
+  output_path: /var/log/json-store/app.log
+
+security:
+  enable_https: true
+  cert_file: /etc/ssl/certs/cert.pem
+  key_file: /etc/ssl/private/key.pem
+  cors_origins:
+    - "https://test.example.com"
